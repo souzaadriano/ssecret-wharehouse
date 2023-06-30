@@ -1,3 +1,5 @@
+import { TCreateUser } from './user-repository.type';
+
 export interface IUserRepository {
-  save(): Promise<void>;
+  save(input: TCreateUser): Promise<void>;
 }
