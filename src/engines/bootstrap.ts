@@ -1,13 +1,13 @@
-import { ClassConstructor } from '@/utils/class-constructor.type';
-import { EngineContract } from './engine.contract';
+import { ClassConstructor } from '@/helpers/class-constructor.type';
+import { IEngine } from './engine.contract';
 
 export class Bootstrap {
-  private engines: Set<ClassConstructor<EngineContract>>;
-  private constructor(engines: ClassConstructor<EngineContract>[]) {
+  private engines: Set<ClassConstructor<IEngine>>;
+  private constructor(engines: ClassConstructor<IEngine>[]) {
     this.engines = new Set(engines);
   }
 
-  public static createApp(engines: ClassConstructor<EngineContract>[]) {
+  public static createApp(engines: ClassConstructor<IEngine>[]) {
     return new Bootstrap(engines);
   }
 
@@ -17,7 +17,7 @@ export class Bootstrap {
     if (handle) await handle();
   }
 
-  private async init(Engine: ClassConstructor<EngineContract>) {
+  private async init(Engine: ClassConstructor<IEngine>) {
     const engine = new Engine();
     await engine.init();
     console.log(`[${Engine.name}]: Started`);
