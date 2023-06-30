@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: kyss_db
+    environment:
+      POSTGRES_DB: kyss
+      POSTGRES_PASSWORD: kyss_pass
+      POSTGRES_USER: kyss_owner
+    ports:
+      - 9001:5432
+    restart: on-failure:3
+
+  redis:
+    image: redis
+    command: redis-server --requirepass kyss_pass
+    ports:
+      - '9002:6379'
