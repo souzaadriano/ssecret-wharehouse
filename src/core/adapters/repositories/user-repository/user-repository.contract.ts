@@ -1,5 +1,5 @@
-import { TCreateUser } from './user-repository.type';
+import { UserModel } from '@/core/domain/entities/user/user.model';
 
 export interface IUserRepository {
-  save(input: TCreateUser): Promise<void>;
+  save(input: UserModel): Promise<void>;
 }
