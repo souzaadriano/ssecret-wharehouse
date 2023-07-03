@@ -1,7 +1,7 @@
 import { EXCEPTION_CODE } from '@/core/domain/exception/exception-code.enum';
-import { Exception } from '@/core/domain/exception/exception.abstract';
+import { AbstractException } from '@/core/domain/exception/exception.abstract';
 
-export class DatabaseException extends Exception {
+export class DatabaseException extends AbstractException {
   code = EXCEPTION_CODE.DATABASE;
 
   constructor(parameters: TDatabaseErrorParameters) {
