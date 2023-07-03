@@ -1,7 +1,7 @@
 import { InvalidInputException } from '../../exception/shared/invalid-input.exception';
 
 export class Email {
-  private static readonly _validate = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, 'gm');
+  private static readonly _validate = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
   constructor(private readonly _value: string) {}
 
   static create(value: string): Email {
