@@ -9,7 +9,7 @@ export class Timezone {
     this._value = this._validate(value);
   }
 
-  get value() {
+  get value(): TIMEZONE {
     return this._value;
   }
 
