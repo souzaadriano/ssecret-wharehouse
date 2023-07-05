@@ -1,7 +1,7 @@
 import { EXCEPTION_CODE } from '../../exception/exception-code.enum';
-import { Exception } from '../../exception/exception.abstract';
+import { AbstractException } from '../../exception/exception.abstract';
 
-export class HashNotMatchException extends Exception {
+export class HashNotMatchException extends AbstractException {
   constructor() {
     super('value not match');
   }

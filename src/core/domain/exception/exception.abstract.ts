@@ -1,7 +1,7 @@
 import { JsonDocument, JsonValue } from '../types/json-document.type';
 import { EXCEPTION_CODE } from './exception-code.enum';
 
-export abstract class Exception extends Error {
+export abstract class AbstractException extends Error {
   private _isUpgraded = false;
   protected readonly _details: Map<string, JsonValue> = new Map<string, JsonValue>();
   abstract readonly code: EXCEPTION_CODE;

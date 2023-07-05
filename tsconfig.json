@@ -12,11 +12,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/Controllers": ["./src/infra/controllers/index"],
-      "@/Modules": ["./src/infra/modules/index"],
-      "@/Use-Cases": ["./src/core/use-cases/*"],
-      "@/Queries/*": ["./src/infra/database/queries/*"]
+      "@/*": ["./src/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
