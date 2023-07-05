@@ -10,6 +10,10 @@ export class DateTime {
     return this._date;
   }
 
+  static now(handler: IDateHandler): DateTime {
+    return new DateTime(new Date(), handler);
+  }
+
   timestamp() {
     return new Timestamp(this._date);
   }
