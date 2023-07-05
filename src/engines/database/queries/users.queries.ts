@@ -51,3 +51,41 @@ const createUserIR: any = {"usedParamSet":{"id":true,"name":true,"email":true,"h
 export const createUser = new PreparedQuery<ICreateUserParams,ICreateUserResult>(createUserIR);
 
 
+/** 'FindByEmail' parameters type */
+export interface IFindByEmailParams {
+  email?: string | null | void;
+}
+
+/** 'FindByEmail' return type */
+export interface IFindByEmailResult {
+  createdAt: Date;
+  deletedAt: Date | null;
+  email: string;
+  hash: string;
+  id: string;
+  name: string;
+  updatedAt: Date;
+}
+
+/** 'FindByEmail' query type */
+export interface IFindByEmailQuery {
+  params: IFindByEmailParams;
+  result: IFindByEmailResult;
+}
+
+const findByEmailIR: any = {"usedParamSet":{"email":true},"params":[{"name":"email","required":false,"transform":{"type":"scalar"},"locs":[{"a":58,"b":63}]}],"statement":"select\n    *\nfrom\n    \"users\"\nwhere\n    \"users\".\"email\" = :email"};
+
+/**
+ * Query generated from SQL:
+ * ```
+ * select
+ *     *
+ * from
+ *     "users"
+ * where
+ *     "users"."email" = :email
+ * ```
+ */
+export const findByEmail = new PreparedQuery<IFindByEmailParams,IFindByEmailResult>(findByEmailIR);
+
+
